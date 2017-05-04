@@ -5,6 +5,9 @@ Use PDFTK to fill forms
 ## Un-password a file
 - You can use [SmallPdf](https://smallpdf.com/unlock-pdf) to unlock the pdf as a one time thing
 
+## Get PDFTK
+- You can get PDFTK from their website, or if you have MAC issues, check [this](http://stackoverflow.com/questions/32505951/pdftk-server-on-os-x-10-11)
+
 ## Get fdf of PDF
 - To correctly get form data, run:
 
