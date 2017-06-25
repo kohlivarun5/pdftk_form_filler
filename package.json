@@ -1,0 +1,22 @@
+{
+  "name": "pdftk_form_filler",
+  "version": "1.0.0",
+  "description": "Use PDFTK to fill forms",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kohlivarun5/pdftk_form_filler.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kohlivarun5/pdftk_form_filler/issues"
+  },
+  "homepage": "https://github.com/kohlivarun5/pdftk_form_filler#readme",
+  "dependencies": {
+    "node-pdffiller": "0.0.7"
+  }
+}
