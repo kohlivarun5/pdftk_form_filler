@@ -39,8 +39,8 @@ exports.handler = (event, context, callback) => {
           var body = JSON.parse(event.body);
           console.log(body);
           var sourcePDF = SOURCE_FILE_OF_NAME[body.form_name].path;
-          var id = context.requestId;
-          var destinationPDF = "/tmp/${id}.pdf";
+          var destinationPDFName = `${context.requestId}.pdf`;
+          var destinationPDF = `/tmp/${destinationPDFName}`;
           pdfFiller.fillForm(
             sourcePDF, destinationPDF, body.form_data, function(err) { 
               fs.readFile(destinationPDF, function (err, data) {
@@ -48,7 +48,7 @@ exports.handler = (event, context, callback) => {
               
                 var base64data = new Buffer(data, 'binary');
               
-                var params = {Bucket: 'pdftkapi-output', Key: id, Body:base64data};
+                var params = {Bucket: 'pdftkapi-output', Key: destinationPDFName, Body:base64data};
                 s3.upload(params, done);
               });
           });

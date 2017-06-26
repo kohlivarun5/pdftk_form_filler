@@ -1,11 +1,15 @@
 const pdftkapi = require('./index.js');
 
+const context = {
+  requestId : "test_I539"
+};
+
 pdftkapi.handler({
   httpMethod : "GET",
   queryStringParameters : {
     form_name : "I539"
   }
-},null,function(err,msg) {
+},context,function(err,msg) {
   console.log(err,msg);
 });
 
@@ -18,6 +22,6 @@ pdftkapi.handler({
       "form1[0].#subform[1].P4_Line1a_CountryOfIssuance[0]" : "INDIA"
     }
   })
-},null,function(err,msg) {
+},context,function(err,msg) {
   console.log(err,msg);
 });
