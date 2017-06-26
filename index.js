@@ -3,11 +3,8 @@
 const pdfFiller   = require( 'node-pdffiller' );
 const AWS = require('aws-sdk');
 const fs = require('fs');
+const uuidv4 = require('uuid/v4');
 
-AWS.config.update({
-  accessKeyId: 'AKIAIK3KOW5ILAEFVSIQ',
-  secretAccessKey: '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' 
-});
 var s3 = new AWS.S3();
 
 const SOURCE_FILE_OF_NAME = {
@@ -39,7 +36,7 @@ exports.handler = (event, context, callback) => {
           var body = JSON.parse(event.body);
           console.log(body);
           var sourcePDF = SOURCE_FILE_OF_NAME[body.form_name].path;
-          var destinationPDFName = `${context.requestId}.pdf`;
+          var destinationPDFName = `${uuidv4()}.pdf`;
           var destinationPDF = `/tmp/${destinationPDFName}`;
           pdfFiller.fillForm(
             sourcePDF, destinationPDF, body.form_data, function(err) { 
