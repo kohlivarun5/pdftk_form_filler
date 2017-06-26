@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/kohlivarun5/pdftk_form_filler#readme",
   "dependencies": {
+    "aws-sdk": "^2.77.0",
+    "fs": "0.0.1-security",
     "node-pdffiller": "0.0.7"
   }
 }
