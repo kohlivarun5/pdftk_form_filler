@@ -19,3 +19,9 @@ Use PDFTK to fill forms
 
 `pdftk input.pdf fill_form file.fdf output filled.pdf flatten`
 - `flatten` will make sure the output text is also `pretty`
+
+## Work with AWS Lambda (https://lob.com/blog/aws-lambda-pdftk)
+- `./dist.sh` : Create zip file
+- Go to AWS console and upload and test
+- You do not need credentials in LAMBDA as AWS IAM role will set them
+
