@@ -1,7 +1,7 @@
 const pdftkapi = require('./index.js');
 
 const context = {
-  requestId : "test_I539"
+  awsRequestId : "test_I539"
 };
 
 pdftkapi.handler({
