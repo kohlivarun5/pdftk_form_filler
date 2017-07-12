@@ -46,6 +46,7 @@ exports.handler = (event, context, callback) => {
               
                 var base64data = new Buffer(data, 'binary');
               
+                console.log("Calling S3 to upload",destinationPDFName);
                 var params = {Bucket: 'pdftkapi-output', Key: destinationPDFName, Body:base64data};
                 s3.upload(params, done);
               });
